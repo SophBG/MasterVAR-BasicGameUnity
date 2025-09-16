@@ -229,7 +229,7 @@ MonoBehaviour:
   sprintSpeed: 0
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   playerHeight: 2
-  whatIsGround:
+  groundLayer:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 345938515957970171}
