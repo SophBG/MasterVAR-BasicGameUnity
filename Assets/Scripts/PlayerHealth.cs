@@ -1,31 +1,37 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemyHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [Header("Health Settings")]
-    public int maxHealth = 50;
+    public int maxHealth = 100;
     public int currentHealth;
+    
+    [Header("Damage Settings")]
+    public float damageCooldown = 1f; // Time between damage instances
     
     [Header("Events")]
     public UnityEvent OnDamageTaken;
     public UnityEvent OnDeath;
     public UnityEvent<int, int> OnHealthChanged; // Current health, max health
     
-    private EnemySpawner spawner;
+    private float lastDamageTime;
     private bool isDead = false;
     
-    // Sets reference to the spawner that created this enemy
-    public void Initialize(EnemySpawner spawnerRef)
+    private void Start()
     {
-        spawner = spawnerRef;
         currentHealth = maxHealth;
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
     
     public void TakeDamage(int damageAmount)
     {
         if (isDead) return;
-        
+
+        // Check if we're still in damage cooldown
+        // if (Time.time - lastDamageTime < damageCooldown) return;
+        // lastDamageTime = Time.time;
+
         currentHealth -= damageAmount;
         currentHealth = Mathf.Max(0, currentHealth);
         
@@ -38,17 +44,23 @@ public class EnemyHealth : MonoBehaviour
         }
     }
     
+    // probably will not be used on time
+    public void Heal(int healAmount)
+    {
+        if (isDead) return;
+
+        currentHealth += healAmount;
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+    }
+    
     private void Die()
     {
         isDead = true;
         OnDeath?.Invoke();
         
-        // Notify spawner when enemy is destroyed
-        if (spawner != null)
-        {
-            spawner.NotifyEnemyDestroyed();
-        }
-        
-        Destroy(gameObject, 0.1f); // Small delay to allow events to fire
+        // Disable player controls or other components
+        Debug.Log("Player has died!");
     }
 }

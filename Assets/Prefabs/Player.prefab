@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 2524507519289073741}
   - component: {fileID: 2166030713209502090}
   - component: {fileID: 4957494489344166756}
+  - component: {fileID: 5638619435339307070}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -233,6 +234,30 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 345938515957970171}
+--- !u!114 &5638619435339307070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813535186450402205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1852fe2fe91097e40ab5a836e5846755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 100
+  currentHealth: 0
+  damageCooldown: 1
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8252885866649451374
 GameObject:
   m_ObjectHideFlags: 0
