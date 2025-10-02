@@ -60,7 +60,6 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
         OnDeath?.Invoke();
         
-        // Disable player controls or other components
-        Debug.Log("Player has died!");
+        // Debug.Log("Player has died!");
     }
 }

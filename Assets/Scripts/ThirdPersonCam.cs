@@ -34,7 +34,7 @@ public class ThirdPersonCam : MonoBehaviour
 
     private void OnEnable()
     {
-        // Enable the action map (assuming it's called "Player" or create a new one for camera)
+        // Enable the action map
         inputActions.FindActionMap("Player").Enable();
     }
 
@@ -44,10 +44,19 @@ public class ThirdPersonCam : MonoBehaviour
         inputActions.FindActionMap("Player").Disable();
     }
 
+    private void OnDestroy()
+    {
+        // Clean up input action subscriptions
+        switchToBasicCamAction.performed -= OnSwitchToBasicCamPerformed;
+        switchToCombatCamAction.performed -= OnSwitchToCombatCamPerformed;
+        switchToTopdownCamAction.performed -= OnSwitchToTopdownCamPerformed;
+    }
+
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        SwitchCameraStyle(currentStyle);
+
+        LockCursor();
 
         // Get references to input actions
         switchToBasicCamAction = inputActions.FindAction("SwitchToBasicCam");
@@ -56,9 +65,9 @@ public class ThirdPersonCam : MonoBehaviour
         moveAction = inputActions.FindAction("Move");
 
         // Set up callback functions
-        switchToBasicCamAction.performed += ctx => SwitchCameraStyle(CameraStyle.Basic);
-        switchToCombatCamAction.performed += ctx => SwitchCameraStyle(CameraStyle.Combat);
-        switchToTopdownCamAction.performed += ctx => SwitchCameraStyle(CameraStyle.Topdown);
+        switchToBasicCamAction.performed += OnSwitchToBasicCamPerformed;
+        switchToCombatCamAction.performed += OnSwitchToCombatCamPerformed;
+        switchToTopdownCamAction.performed += OnSwitchToTopdownCamPerformed;
     }
 
     private void Update()
@@ -68,7 +77,7 @@ public class ThirdPersonCam : MonoBehaviour
         orientation.forward = viewDir.normalized;
 
         // rotate player object
-        if(currentStyle == CameraStyle.Basic || currentStyle == CameraStyle.Topdown)
+        if (currentStyle == CameraStyle.Basic || currentStyle == CameraStyle.Topdown)
         {
             Vector2 moveInput = moveAction.ReadValue<Vector2>();
             Vector3 inputDir = orientation.forward * moveInput.y + orientation.right * moveInput.x;
@@ -76,12 +85,27 @@ public class ThirdPersonCam : MonoBehaviour
             if (inputDir != Vector3.zero)
                 playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
         }
-        else if(currentStyle == CameraStyle.Combat)
+        else if (currentStyle == CameraStyle.Combat)
         {
             Vector3 dirToCombatLookAt = combatLookAt.position - new Vector3(transform.position.x, combatLookAt.position.y, transform.position.z);
             orientation.forward = dirToCombatLookAt.normalized;
             playerObj.forward = dirToCombatLookAt.normalized;
         }
+    }
+    
+    private void OnSwitchToBasicCamPerformed(InputAction.CallbackContext context)
+    {
+        SwitchCameraStyle(CameraStyle.Basic);
+    }
+
+    private void OnSwitchToCombatCamPerformed(InputAction.CallbackContext context)
+    {
+        SwitchCameraStyle(CameraStyle.Combat);
+    }
+
+    private void OnSwitchToTopdownCamPerformed(InputAction.CallbackContext context)
+    {
+        SwitchCameraStyle(CameraStyle.Topdown);
     }
 
     private void SwitchCameraStyle(CameraStyle newStyle)
@@ -95,5 +119,17 @@ public class ThirdPersonCam : MonoBehaviour
         if (newStyle == CameraStyle.Topdown) topDownCam.SetActive(true);
 
         currentStyle = newStyle;
+    }
+
+    public void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

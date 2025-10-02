@@ -41,6 +41,12 @@ public class PlayerMovement : MonoBehaviour
         inputActions.FindActionMap("Player").Disable();
     }
 
+    private void OnDestroy()
+    {
+        // Clean up jump action subscription
+        jumpAction.performed -= OnJump;
+    }
+
     private void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
@@ -52,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
 
         // Set up jump action callback
-        jumpAction.performed += ctx => OnJump();
+        jumpAction.performed += OnJump;
     }
 
     private void Update()
@@ -80,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         moveInput = moveAction.ReadValue<Vector2>();
     }
 
-    private void OnJump()
+    private void OnJump(InputAction.CallbackContext context)
     {
         if (readyToJump && grounded)
         {
@@ -96,11 +102,11 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = orientation.forward * moveInput.y + orientation.right * moveInput.x;
 
         // on ground
-        if(grounded)
+        if (grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
         // in air
-        else if(!grounded)
+        else if (!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
     }
 
@@ -109,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 flatVel = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
         // limit velocity if needed
-        if(flatVel.magnitude > moveSpeed)
+        if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
