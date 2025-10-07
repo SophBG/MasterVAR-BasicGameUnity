@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1406111553444039580}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +118,9 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  OnDamageTakenWithAmount:
+    m_PersistentCalls:
+      m_Calls: []
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -135,7 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamageOnContact
   damageAmount: 10
   damageCooldown: 1
-  playerPrefab: {fileID: 0}
+  checkByTag: 1
+  playerTag: Player
 --- !u!1 &4129926519040989889
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +154,7 @@ GameObject:
   - component: {fileID: 3232649020763299257}
   m_Layer: 0
   m_Name: Enemy Body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +267,7 @@ GameObject:
   - component: {fileID: 1690503199308045694}
   m_Layer: 0
   m_Name: Enemy Visor
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -107,7 +107,7 @@ public class EnemySpawner : MonoBehaviour
         {
             position = hit.point + Vector3.up * 0.1f; // Spawn slightly above ground
 
-            GameObject enemy = Instantiate(enemyPrefab, position, Quaternion.identity);
+            GameObject enemy = Instantiate(enemyPrefab, position, Quaternion.identity, transform);
             
             // Make enemy face player
             enemy.transform.LookAt(new Vector3(player.position.x, position.y, player.position.z));

@@ -4,26 +4,28 @@ using UnityEngine.Events;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Health Settings")]
-    public int maxHealth = 50;
-    public int currentHealth;
+    public int maxHealth = 50;          // Maximum health value
+    public int currentHealth;           // Current health value
     
     [Header("Events")]
-    public UnityEvent OnDamageTaken;
-    public UnityEvent OnDeath;
-    public UnityEvent<int, int> OnHealthChanged; // Current health, max health
+    public UnityEvent OnDamageTaken;                    // Event when damage is taken
+    public UnityEvent OnDeath;                          // Event when enemy dies
+    public UnityEvent<int> OnDamageTakenWithAmount;     // Event with damage amount
+    public UnityEvent<int, int> OnHealthChanged;        // Event with current and max health
     
-    private EnemySpawner spawner;
-    private bool isDead = false;
+    private EnemySpawner spawner;   // Reference to spawner
+    private bool isDead = false;    // Death state flag
     
-    // Sets reference to the spawner that created this enemy
     public void Initialize(EnemySpawner spawnerRef)
     {
         spawner = spawnerRef;
         currentHealth = maxHealth;
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
     
     public void TakeDamage(int damageAmount)
     {
+        // Apply damage and check for death
         if (isDead) return;
         
         currentHealth -= damageAmount;
@@ -31,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
         
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
         OnDamageTaken?.Invoke();
+        OnDamageTakenWithAmount?.Invoke(damageAmount);
         
         if (currentHealth <= 0)
         {
@@ -40,15 +43,15 @@ public class EnemyHealth : MonoBehaviour
     
     private void Die()
     {
+        // Handle enemy death
         isDead = true;
         OnDeath?.Invoke();
         
-        // Notify spawner when enemy is destroyed
         if (spawner != null)
         {
             spawner.NotifyEnemyDestroyed();
         }
         
-        Destroy(gameObject, 0.1f); // Small delay to allow events to fire
+        Destroy(gameObject, 0.1f);
     }
 }

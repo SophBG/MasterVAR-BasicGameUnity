@@ -17,15 +17,17 @@ public class DamageOnContact : MonoBehaviour
         CheckForPlayerDamage(collision.gameObject);
     }
     
+    /*
     private void OnTriggerEnter(Collider other)
     {
         CheckForPlayerDamage(other.gameObject);
     }
+    */
     
     private void CheckForPlayerDamage(GameObject otherObject)
     {
         // check if the object has PlayerHealth component
-        PlayerHealth playerHealth = otherObject.GetComponent<PlayerHealth>();
+        PlayerHealth playerHealth = otherObject.GetComponentInParent<PlayerHealth>();
         
         if (playerHealth != null && otherObject.CompareTag(playerTag))
         {
