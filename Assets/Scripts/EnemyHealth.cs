@@ -1,26 +1,31 @@
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Health Settings")]
     public int maxHealth = 50;          // Maximum health value
+    public Slider healthBar;            // Enemy health bar
     public int currentHealth;           // Current health value
     
-    [Header("Events")]
-    public UnityEvent OnDamageTaken;                    // Event when damage is taken
-    public UnityEvent OnDeath;                          // Event when enemy dies
-    public UnityEvent<int> OnDamageTakenWithAmount;     // Event with damage amount
-    public UnityEvent<int, int> OnHealthChanged;        // Event with current and max health
-    
     private EnemySpawner spawner;   // Reference to spawner
+    private Transform playerCam;    // Player cam for bar rotation
+
     private bool isDead = false;    // Death state flag
-    
-    public void Initialize(EnemySpawner spawnerRef)
+
+    public void LateUpdate()
+    {
+        healthBar.transform.LookAt(playerCam);
+    }
+
+    public void Initialize(EnemySpawner spawnerRef, Transform cam)
     {
         spawner = spawnerRef;
         currentHealth = maxHealth;
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        healthBar.value = 100;
+        playerCam = cam;
     }
     
     public void TakeDamage(int damageAmount)
@@ -30,10 +35,10 @@ public class EnemyHealth : MonoBehaviour
         
         currentHealth -= damageAmount;
         currentHealth = Mathf.Max(0, currentHealth);
-        
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
-        OnDamageTaken?.Invoke();
-        OnDamageTakenWithAmount?.Invoke(damageAmount);
+
+        healthBar.value = 100 * currentHealth / maxHealth;
+
+        spawner.NotifyEnemyDamaged();
         
         if (currentHealth <= 0)
         {
@@ -45,7 +50,6 @@ public class EnemyHealth : MonoBehaviour
     {
         // Handle enemy death
         isDead = true;
-        OnDeath?.Invoke();
         
         if (spawner != null)
         {

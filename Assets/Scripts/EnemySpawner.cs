@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Player Reference")]
     public Transform player;                // Reference to player transform
+    public Transform playerCam;             // Reference to player cam for health bar
+
+    [Header("Events")]
+    public UnityEvent OnDeath;              // Event when enemy dies
+    public UnityEvent OnDamageTaken;        // Event with damage amount
 
     private int currentEnemyCount = 0;      // Current number of active enemies
 
@@ -122,16 +128,22 @@ public class EnemySpawner : MonoBehaviour
             EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                enemyHealth.Initialize(this);
+                enemyHealth.Initialize(this, playerCam);
             }
             
             currentEnemyCount++;
         }
     }
 
+    public void NotifyEnemyDamaged()
+    {
+        OnDamageTaken?.Invoke();
+    }
+
     public void NotifyEnemyDestroyed()
     {
         currentEnemyCount--;
         currentEnemyCount = Mathf.Max(0, currentEnemyCount);
+        OnDeath?.Invoke();
     }
 }

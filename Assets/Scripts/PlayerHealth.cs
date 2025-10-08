@@ -1,19 +1,19 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health Settings")]
     public int maxHealth = 100;
+    public Slider healthBar;            // Player health bar
     public int currentHealth;
     
     [Header("Damage Settings")]
     public float damageCooldown = 1f; // Time between damage instances
     
     [Header("Events")]
-    public UnityEvent OnDamageTaken;
     public UnityEvent OnDeath;
-    public UnityEvent<int, int> OnHealthChanged; // Current health, max health
     
     private float lastDamageTime;
     private bool isDead = false;
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        healthBar.value = 100;
     }
     
     public void TakeDamage(int damageAmount)
@@ -34,9 +34,8 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth -= damageAmount;
         currentHealth = Mathf.Max(0, currentHealth);
-        
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
-        OnDamageTaken?.Invoke();
+
+        healthBar.value = 100 * currentHealth / maxHealth;
         
         if (currentHealth <= 0)
         {
@@ -51,8 +50,6 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth += healAmount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
-
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
     
     private void Die()
