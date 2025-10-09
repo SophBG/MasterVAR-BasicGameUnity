@@ -114,18 +114,6 @@ MonoBehaviour:
   maxHealth: 50
   healthBar: {fileID: 2917268068775957944}
   currentHealth: 0
-  OnDamageTaken:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDamageTakenWithAmount:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1406111553444039580
 MonoBehaviour:
   m_ObjectHideFlags: 0
