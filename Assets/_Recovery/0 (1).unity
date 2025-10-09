@@ -3127,10 +3127,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1793956960}
     m_Modifications:
-    - target: {fileID: 322329352038543783, guid: 97087e7b546bb5a4e973fd59f6985c16, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 1904969046085278649, guid: 97087e7b546bb5a4e973fd59f6985c16, type: 3}
       propertyPath: m_Name
       value: Building7
@@ -4595,7 +4591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2247958807524645399, guid: 0955decf9879b2046b931a9b28f5c7eb, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3162808407415148877, guid: 0955decf9879b2046b931a9b28f5c7eb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4639,7 +4635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5581055760046499903, guid: 0955decf9879b2046b931a9b28f5c7eb, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9724,7 +9720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1737443047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9750,7 +9746,6 @@ MonoBehaviour:
     m_Bits: 2048
   maxGroundCheckDistance: 50
   maxSpawnAttempts: 10
-  ceilingCheckHeight: 20
   player: {fileID: 387365982}
   playerCam: {fileID: 6649001113406719926}
   OnDeath:
@@ -12568,7 +12563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199692317729366581}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.098537624, y: -0.0000000042549595, z: -0.0000000010636039, w: 0.9951334}
+  m_LocalRotation: {x: -0.08110335, y: 0.08220695, z: 0.006712318, w: 0.99328715}
   m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

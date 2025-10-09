@@ -19,6 +19,9 @@ public class EnemySpawner : MonoBehaviour
     public float maxGroundCheckDistance = 50f; // Maximum distance to check for ground
     public int maxSpawnAttempts = 10;       // Maximum attempts to find valid spawn position
 
+    [Header("Ceiling Check Settings")]
+    public float ceilingCheckHeight = 20f;  // How high to check for ceilings/obstacles above
+
     [Header("Player Reference")]
     public Transform player;                // Reference to player transform
     public Transform playerCam;             // Reference to player cam for health bar
@@ -92,12 +95,18 @@ public class EnemySpawner : MonoBehaviour
             if (distanceToPlayer < minSpawnRadius || distanceToPlayer > maxSpawnRadius)
                 return false;
 
+            // Check surface slope (avoid steep terrain)
+            if (Vector3.Angle(hit.normal, Vector3.up) > 30f)
+                return false;
+
             // Check for obstacles at spawn location
             if (Physics.CheckSphere(groundPosition + Vector3.up * 0.5f, 0.5f, obstacleLayer))
                 return false;
 
-            // Check surface slope (avoid steep terrain)
-            if (Vector3.Angle(hit.normal, Vector3.up) > 30f)
+            // Check if there's a ceiling/obstacle above
+            // Simple raycast upward to check for obstacles above
+            Vector3 rayStart = groundPosition + Vector3.up * 0.1f; // Slightly above ground
+            if (Physics.Raycast(rayStart, Vector3.up, ceilingCheckHeight, obstacleLayer))
                 return false;
 
             return true;
