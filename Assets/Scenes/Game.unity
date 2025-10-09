@@ -173,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283252916008055293, guid: e14985f4b2e25c34d805d8f8239952de, type: 3}
       propertyPath: m_Name
-      value: Building12 (2)
+      value: Building12
       objectReference: {fileID: 0}
     - target: {fileID: 8283252916008055293, guid: e14985f4b2e25c34d805d8f8239952de, type: 3}
       propertyPath: m_Layer
@@ -282,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Name
-      value: Traffic3 (7)
+      value: Traffic3
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Layer
@@ -352,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (1)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -422,7 +422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (2)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -456,7 +456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Name
-      value: Traffic1 (4)
+      value: Traffic1
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Layer
@@ -951,7 +951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (1)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -1025,7 +1025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (3)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -1232,7 +1232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Name
-      value: Traffic3 (1)
+      value: Traffic3
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Layer
@@ -1547,7 +1547,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 763456528900971197, guid: 156deca1efd51694680efbf59334d166, type: 3}
       propertyPath: m_Name
-      value: Traffic4 (1)
+      value: Traffic4
       objectReference: {fileID: 0}
     - target: {fileID: 763456528900971197, guid: 156deca1efd51694680efbf59334d166, type: 3}
       propertyPath: m_Layer
@@ -2227,7 +2227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (6)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -2371,7 +2371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (4)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -2518,7 +2518,7 @@ Transform:
   m_GameObject: {fileID: 387365977}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -418.96188, y: -197.41191, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2851,7 +2851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (7)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -2921,7 +2921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016510881455384520, guid: 67e3c5763f74c9f4a8288fc51b26202c, type: 3}
       propertyPath: m_Name
-      value: Building10 (1)
+      value: Building10
       objectReference: {fileID: 0}
     - target: {fileID: 8016510881455384520, guid: 67e3c5763f74c9f4a8288fc51b26202c, type: 3}
       propertyPath: m_Layer
@@ -4079,7 +4079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8450528579514699327, guid: 11b81dedc66b54b40aa0bbdf5ac44cf0, type: 3}
       propertyPath: m_Name
-      value: Building11 (3)
+      value: Building11
       objectReference: {fileID: 0}
     - target: {fileID: 8450528579514699327, guid: 11b81dedc66b54b40aa0bbdf5ac44cf0, type: 3}
       propertyPath: m_Layer
@@ -4262,7 +4262,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 763456528900971197, guid: 156deca1efd51694680efbf59334d166, type: 3}
       propertyPath: m_Name
-      value: Traffic4 (2)
+      value: Traffic4
       objectReference: {fileID: 0}
     - target: {fileID: 763456528900971197, guid: 156deca1efd51694680efbf59334d166, type: 3}
       propertyPath: m_Layer
@@ -4376,7 +4376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8450528579514699327, guid: 11b81dedc66b54b40aa0bbdf5ac44cf0, type: 3}
       propertyPath: m_Name
-      value: Building11 (1)
+      value: Building11
       objectReference: {fileID: 0}
     - target: {fileID: 8450528579514699327, guid: 11b81dedc66b54b40aa0bbdf5ac44cf0, type: 3}
       propertyPath: m_Layer
@@ -4705,7 +4705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Name
-      value: Traffic3 (3)
+      value: Traffic3
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Layer
@@ -4775,7 +4775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8450528579514699327, guid: 11b81dedc66b54b40aa0bbdf5ac44cf0, type: 3}
       propertyPath: m_Name
-      value: Building11 (2)
+      value: Building11
       objectReference: {fileID: 0}
     - target: {fileID: 8450528579514699327, guid: 11b81dedc66b54b40aa0bbdf5ac44cf0, type: 3}
       propertyPath: m_Layer
@@ -5491,7 +5491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (1)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -5636,7 +5636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (6)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -5759,7 +5759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Name
-      value: Traffic3 (4)
+      value: Traffic3
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Layer
@@ -5793,7 +5793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Name
-      value: Traffic1 (3)
+      value: Traffic1
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Layer
@@ -5915,7 +5915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283252916008055293, guid: e14985f4b2e25c34d805d8f8239952de, type: 3}
       propertyPath: m_Name
-      value: Building12 (3)
+      value: Building12
       objectReference: {fileID: 0}
     - target: {fileID: 8283252916008055293, guid: e14985f4b2e25c34d805d8f8239952de, type: 3}
       propertyPath: m_Layer
@@ -6016,7 +6016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (9)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -6316,7 +6316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Name
-      value: Traffic3 (8)
+      value: Traffic3
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Layer
@@ -6448,7 +6448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3681763274321052515, guid: a2e8de82bbc056f4580d7bd706146999, type: 3}
       propertyPath: m_Name
-      value: Building5 (1)
+      value: Building5
       objectReference: {fileID: 0}
     - target: {fileID: 3681763274321052515, guid: a2e8de82bbc056f4580d7bd706146999, type: 3}
       propertyPath: m_Layer
@@ -6558,7 +6558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (4)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -6706,7 +6706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Name
-      value: Traffic3 (9)
+      value: Traffic3
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Layer
@@ -6780,7 +6780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (2)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -7119,7 +7119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283252916008055293, guid: e14985f4b2e25c34d805d8f8239952de, type: 3}
       propertyPath: m_Name
-      value: Building12 (1)
+      value: Building12
       objectReference: {fileID: 0}
     - target: {fileID: 8283252916008055293, guid: e14985f4b2e25c34d805d8f8239952de, type: 3}
       propertyPath: m_Layer
@@ -7396,7 +7396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (1)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -7466,7 +7466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (1)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -7950,7 +7950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (5)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -7991,7 +7991,7 @@ Transform:
   m_GameObject: {fileID: 1288509131}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58, y: 0, z: 0.73718}
+  m_LocalPosition: {x: 57.63, y: 0, z: 1.5}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8061,7 +8061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Name
-      value: Traffic3 (2)
+      value: Traffic3
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Layer
@@ -8409,7 +8409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (2)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -8690,7 +8690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (3)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -8900,7 +8900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (3)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -9044,7 +9044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (2)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -9114,7 +9114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (5)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -9184,7 +9184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (7)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -9476,7 +9476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Name
-      value: Traffic1 (1)
+      value: Traffic1
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Layer
@@ -9636,7 +9636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Name
-      value: Traffic1 (7)
+      value: Traffic1
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Layer
@@ -9851,7 +9851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (1)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -9921,7 +9921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (8)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -10102,7 +10102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Name
-      value: tree (10)
+      value: tree
       objectReference: {fileID: 0}
     - target: {fileID: 8698848889249751585, guid: 842d05a1f39b09345874789a88391800, type: 3}
       propertyPath: m_Layer
@@ -10234,7 +10234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Name
-      value: Traffic3 (10)
+      value: Traffic3
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Layer
@@ -10338,7 +10338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Name
-      value: Traffic1 (2)
+      value: Traffic1
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Layer
@@ -10605,7 +10605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8450528579514699327, guid: 11b81dedc66b54b40aa0bbdf5ac44cf0, type: 3}
       propertyPath: m_Name
-      value: Building11 (4)
+      value: Building11
       objectReference: {fileID: 0}
     - target: {fileID: 8450528579514699327, guid: 11b81dedc66b54b40aa0bbdf5ac44cf0, type: 3}
       propertyPath: m_Layer
@@ -10827,7 +10827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (3)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -10931,7 +10931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Name
-      value: Traffic1 (5)
+      value: Traffic1
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Layer
@@ -11333,7 +11333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Name
-      value: Traffic3 (5)
+      value: Traffic3
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Layer
@@ -11444,7 +11444,7 @@ Transform:
   m_GameObject: {fileID: 1964602097}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 418.96188, y: 198.91191, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11581,7 +11581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (4)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -11814,7 +11814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Name
-      value: Traffic2 (2)
+      value: Traffic2
       objectReference: {fileID: 0}
     - target: {fileID: 8986579281496474083, guid: 96092f28881dbee4ea0541da0dabaacd, type: 3}
       propertyPath: m_Layer
@@ -11918,7 +11918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Name
-      value: Traffic1 (6)
+      value: Traffic1
       objectReference: {fileID: 0}
     - target: {fileID: 2488810984026259439, guid: 0a225ed74ca76614a9a81bcebf0385e2, type: 3}
       propertyPath: m_Layer
@@ -12388,7 +12388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Name
-      value: Traffic3 (6)
+      value: Traffic3
       objectReference: {fileID: 0}
     - target: {fileID: 6385393089190517195, guid: 11afe41383312e84a92b07cc80abf414, type: 3}
       propertyPath: m_Layer
@@ -12682,7 +12682,7 @@ Transform:
   m_GameObject: {fileID: 5465055362129880209}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -423.65887, y: -198.91191, z: -2.45232}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
