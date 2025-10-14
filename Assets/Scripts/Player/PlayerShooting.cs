@@ -32,6 +32,9 @@ public class PlayerShooting : MonoBehaviour
     [Header("Events")]
     public UnityEvent<Weapon> NewWeapon;
 
+    [Header("Particle Effects")]
+    public ParticleSystem gunParticles;         // Particle system to play on bullet spawn
+
     private float timer;        // Cooldown timer for shooting
     private bool isShooting;    // Track if shoot button is held
 
@@ -169,6 +172,12 @@ public class PlayerShooting : MonoBehaviour
         GameObject bullet = Instantiate(BulletPrefab, bulletSpawnTransform.position, bulletSpawnTransform.rotation, GameObject.FindGameObjectWithTag("WorldObjectHolder").transform);
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawnTransform.forward * BulletSpeed, ForceMode.Impulse);
         bullet.GetComponent<Projectile>().Initialize(BulletDamage);
+
+        // Play spawn particles if assigned
+        if (gunParticles != null)
+        {
+            gunParticles.Play();
+        }
 
         timer = 1f / FireRate; // Reset cooldown timer
     }
