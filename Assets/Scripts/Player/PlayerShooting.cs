@@ -52,7 +52,7 @@ public class PlayerShooting : MonoBehaviour
     {
         // Update cooldown timer
         if (timer > 0)
-            timer -= Time.deltaTime / fireRate;
+            timer -= Time.deltaTime;
         
         // Handle auto fire when button is held
         if (isAuto && isShooting && timer <= 0)
@@ -93,8 +93,8 @@ public class PlayerShooting : MonoBehaviour
         // Create bullet and set its properties
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnTransform.position, bulletSpawnTransform.rotation, GameObject.FindGameObjectWithTag("WorldObjectHolder").transform);
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawnTransform.forward * bulletSpeed, ForceMode.Impulse);
-        bullet.GetComponent<Projectile>().damage = bulletDamage;
+        bullet.GetComponent<Projectile>().Initialize(bulletDamage);
 
-        timer = 1; // Reset cooldown timer
+        timer = 1f / fireRate; // Reset cooldown timer
     }
 }

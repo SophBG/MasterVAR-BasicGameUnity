@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float damage; // Damage value of the bullet
-    public float lifeTime = 1; // Time before bullet is destroyed
+    private float damage; // Damage value of the bullet
+    public float lifeTime; // Time before bullet is destroyed
 
+    public void Initialize(float dam)
+    {
+        damage = dam;
+    }
+    
     private void Update()
     {
         // Countdown lifetime and destroy when expired
@@ -14,18 +19,18 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            EnemyHealth enemyHealth = other.GetComponentInParent<EnemyHealth>();
+            EnemyHealth enemyHealth = collision.gameObject.GetComponentInParent<EnemyHealth>();
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage((int)damage);
             }
         }
 
-        if (!other.CompareTag("Projectile") && !other.CompareTag("Player"))
+        if (!collision.gameObject.CompareTag("Projectile") && !collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
