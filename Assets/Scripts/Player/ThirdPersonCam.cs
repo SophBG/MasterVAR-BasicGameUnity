@@ -27,9 +27,6 @@ public class ThirdPersonCam : MonoBehaviour
 
     [Header("Input Actions")]
     public InputActionAsset inputActions;
-    private InputAction switchToBasicCamAction;
-    private InputAction switchToCombatCamAction;
-    private InputAction switchToTopdownCamAction;
     private InputAction moveAction;
 
     private void OnEnable()
@@ -44,14 +41,6 @@ public class ThirdPersonCam : MonoBehaviour
         inputActions.FindActionMap("Player").Disable();
     }
 
-    private void OnDestroy()
-    {
-        // Clean up input action subscriptions
-        switchToBasicCamAction.performed -= OnSwitchToBasicCamPerformed;
-        switchToCombatCamAction.performed -= OnSwitchToCombatCamPerformed;
-        switchToTopdownCamAction.performed -= OnSwitchToTopdownCamPerformed;
-    }
-
     private void Start()
     {
         SwitchCameraStyle(currentStyle);
@@ -59,15 +48,7 @@ public class ThirdPersonCam : MonoBehaviour
         LockCursor();
 
         // Get references to input actions
-        switchToBasicCamAction = inputActions.FindAction("SwitchToBasicCam");
-        switchToCombatCamAction = inputActions.FindAction("SwitchToCombatCam");
-        switchToTopdownCamAction = inputActions.FindAction("SwitchToTopdownCam");
         moveAction = inputActions.FindAction("Move");
-
-        // Set up callback functions
-        switchToBasicCamAction.performed += OnSwitchToBasicCamPerformed;
-        switchToCombatCamAction.performed += OnSwitchToCombatCamPerformed;
-        switchToTopdownCamAction.performed += OnSwitchToTopdownCamPerformed;
     }
 
     private void Update()
@@ -92,20 +73,15 @@ public class ThirdPersonCam : MonoBehaviour
             playerObj.forward = dirToCombatLookAt.normalized;
         }
     }
-    
-    private void OnSwitchToBasicCamPerformed(InputAction.CallbackContext context)
-    {
-        SwitchCameraStyle(CameraStyle.Basic);
-    }
 
-    private void OnSwitchToCombatCamPerformed(InputAction.CallbackContext context)
+    public void SwitchCameraDropdown(int index)
     {
-        SwitchCameraStyle(CameraStyle.Combat);
-    }
-
-    private void OnSwitchToTopdownCamPerformed(InputAction.CallbackContext context)
-    {
-        SwitchCameraStyle(CameraStyle.Topdown);
+        switch (index)
+        {
+            case 0: SwitchCameraStyle(CameraStyle.Basic); break;
+            case 1: SwitchCameraStyle(CameraStyle.Combat); break;
+            case 2: SwitchCameraStyle(CameraStyle.Topdown); break;
+        }
     }
 
     private void SwitchCameraStyle(CameraStyle newStyle)

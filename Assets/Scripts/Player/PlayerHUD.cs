@@ -3,10 +3,16 @@ using UnityEngine;
 
 public class PlayerHUD : MonoBehaviour
 {
-    [Header("UI References")]
+    [Header("Match Stats")]
     public TextMeshProUGUI timeAliveText;
     public TextMeshProUGUI killsText;
     public TextMeshProUGUI damageText;
+
+    [Header("Gun Stats")]
+    public TextMeshProUGUI gunNameText;
+    public TextMeshProUGUI gunFireRateText;
+    public TextMeshProUGUI gunDamageText;
+    public TextMeshProUGUI gunAutoText;
 
     private float timeAlive = 0f;
     private int kills = 0;
@@ -29,9 +35,9 @@ public class PlayerHUD : MonoBehaviour
         UpdateText();
     }
 
-    public void AddDamage()
+    public void AddDamage(int dam)
     {
-        damage += 1;
+        damage += dam;
         UpdateText();
     }
 
@@ -50,5 +56,16 @@ public class PlayerHUD : MonoBehaviour
         timeAliveText.text = "Time: " + FormatTime(timeAlive);
         killsText.text = "Kills: " + kills;
         damageText.text = "Damage: " + damage;
+    }
+
+    public void DisplayWeapon(PlayerShooting.Weapon currentWeapon)
+    {
+        gunNameText.text = currentWeapon.name;
+        gunFireRateText.text = "Fire Rate: " + currentWeapon.fireRate;
+        gunDamageText.text = "Damage: " + currentWeapon.bulletDamage;
+        if (currentWeapon.isAuto)
+            gunAutoText.text = "Automatic";
+        else
+            gunAutoText.text = "Manual";
     }
 }

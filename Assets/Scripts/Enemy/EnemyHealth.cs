@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour
 
         healthBar.value = 100 * currentHealth / maxHealth;
 
-        spawner.NotifyEnemyDamaged();
+        spawner.NotifyEnemyDamaged(damageAmount);
         
         if (currentHealth <= 0)
         {

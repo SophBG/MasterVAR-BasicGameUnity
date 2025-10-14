@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent OnDeath;              // Event when enemy dies
-    public UnityEvent OnDamageTaken;        // Event with damage amount
+    public UnityEvent <int> OnDamageTaken;  // Event with damage amount
 
     private int currentEnemyCount = 0;      // Current number of active enemies
 
@@ -144,9 +144,9 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void NotifyEnemyDamaged()
+    public void NotifyEnemyDamaged(int damage)
     {
-        OnDamageTaken?.Invoke();
+        OnDamageTaken?.Invoke(damage);
     }
 
     public void NotifyEnemyDestroyed()

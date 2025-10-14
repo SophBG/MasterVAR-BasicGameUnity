@@ -88,7 +88,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwitchToBasicCam",
+                    "name": "Gun1",
                     "type": "Button",
                     "id": "1bf6c583-4fed-4f68-8745-19d426ffcbbf",
                     "expectedControlType": "",
@@ -97,7 +97,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwitchToCombatCam",
+                    "name": "Gun2",
                     "type": "Button",
                     "id": "17e39394-af43-43cc-a4e5-3e12948821bc",
                     "expectedControlType": "",
@@ -106,7 +106,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwitchToTopdownCam",
+                    "name": "Gun3",
                     "type": "Button",
                     "id": "1414e108-0b74-467a-9245-283da4d1f5b2",
                     "expectedControlType": "",
@@ -526,7 +526,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "SwitchToBasicCam",
+                    "action": "Gun1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -537,7 +537,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "SwitchToCombatCam",
+                    "action": "Gun2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -548,7 +548,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "SwitchToTopdownCam",
+                    "action": "Gun3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
