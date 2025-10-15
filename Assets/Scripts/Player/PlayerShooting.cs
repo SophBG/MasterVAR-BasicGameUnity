@@ -13,14 +13,19 @@ public class PlayerShooting : MonoBehaviour
         public float bulletDamage;          // Damage dealt per bullet
         public bool isAuto;                 // Automatic or semi-auto firing mode
         public GameObject bulletPrefab;     // Reference to bullet prefab
+        public AudioClip shootSound;        // Sound when shooting
     }
 
     [Header("Weapons")]
-    public Weapon[] weapons = new Weapon[3];    // Array for 3 weapons
-    public int currentWeaponIndex = 0;          // Currently selected weapon
+    public Weapon[] weapons;                // Array for 3 weapons
+    public int currentWeaponIndex;          // Currently selected weapon
 
     [Header("Initial Setup")]
     public Transform bulletSpawnTransform;  // Position where bullets spawn
+
+    [Header("Audio")]
+    public AudioSource audioSource;         // Audio source for shoot sounds
+    [Range(0f, 1f)] public float shootVolume;
 
     [Header("Input Actions")]
     public InputActionAsset inputActions;   // Input actions asset
@@ -45,6 +50,7 @@ public class PlayerShooting : MonoBehaviour
     private float BulletDamage => CurrentWeapon.bulletDamage;
     private bool IsAuto => CurrentWeapon.isAuto;
     private GameObject BulletPrefab => CurrentWeapon.bulletPrefab;
+    private AudioClip ShootSound => CurrentWeapon.shootSound;
 
     private void OnEnable()
     {
@@ -88,6 +94,9 @@ public class PlayerShooting : MonoBehaviour
         gun2Action.performed += OnGun2Performed;
         gun3Action.performed += OnGun3Performed;
 
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
+        
         // Initialize first weapon
         SwitchWeapon(0);
     }
@@ -168,6 +177,8 @@ public class PlayerShooting : MonoBehaviour
             return;
         }
 
+        PlayShootSound();
+
         // Create bullet and set its properties
         GameObject bullet = Instantiate(BulletPrefab, bulletSpawnTransform.position, bulletSpawnTransform.rotation, GameObject.FindGameObjectWithTag("WorldObjectHolder").transform);
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawnTransform.forward * BulletSpeed, ForceMode.Impulse);
@@ -180,6 +191,14 @@ public class PlayerShooting : MonoBehaviour
         }
 
         timer = 1f / FireRate; // Reset cooldown timer
+    }
+
+    private void PlayShootSound()
+    {
+        if (audioSource != null && ShootSound != null)
+        {
+            audioSource.PlayOneShot(ShootSound, shootVolume);
+        }
     }
 
     // Public method to modify weapons at runtime

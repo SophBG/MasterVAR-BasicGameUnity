@@ -22,6 +22,11 @@ public class PauseMenu : MonoBehaviour
     public UnityEvent OnGamePaused;
     public UnityEvent OnGameResumed;
 
+    [Header("Audio Settings")]
+    public AudioSource audioSource;
+    public AudioClip gameOverSound;
+    [Range(0f, 1f)] public float gameOverVolume;
+
     private bool paused = false;
 
     private void Awake()
@@ -64,6 +69,7 @@ public class PauseMenu : MonoBehaviour
     public void GameOver()
     {
         gameOverPanel.SetActive(true);
+        PlayGameOverSound();
 
         // Pause the game
         Time.timeScale = 0f;
@@ -123,5 +129,13 @@ public class PauseMenu : MonoBehaviour
     {
         // Clean up before scene change
         pauseAction.performed -= OnPausePerformed;
+    }
+
+    private void PlayGameOverSound()
+    {
+        if (audioSource != null && gameOverSound != null)
+        {
+            audioSource.PlayOneShot(gameOverSound, gameOverVolume);
+        }
     }
 }

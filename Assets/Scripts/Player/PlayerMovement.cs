@@ -24,6 +24,17 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     bool grounded;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip footstepSound;
+    public AudioClip jumpSound;
+    [Range(0f, 1f)] public float footstepVolume;
+    [Range(0f, 1f)] public float jumpVolume;
+    public float footstepInterval;
+    public float minVelocityForSound;
+    private float footstepTimer;
+
+    [Header("Orientation")]
     public Transform orientation;
 
     Vector2 moveInput;
@@ -68,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         GetInput();
         SpeedControl();
+        HandleFootstepSounds();
 
         // handle drag
         if (grounded)
@@ -91,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
         if (readyToJump && grounded)
         {
             readyToJump = false;
+            PlayJumpSound();
             Jump();
             Invoke(nameof(ResetJump), jumpCooldown);
         }
@@ -132,5 +145,42 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    private void HandleFootstepSounds()
+    {
+        // Check if on the ground and moving
+        bool isMoving = grounded && rb.linearVelocity.magnitude > minVelocityForSound && moveInput.magnitude > 0.1f;
+
+        if (isMoving)
+        {
+            footstepTimer -= Time.deltaTime;
+            
+            if (footstepTimer <= 0f)
+            {
+                PlayFootstepSound();
+                footstepTimer = footstepInterval;
+            }
+        }
+        else
+        {
+            footstepTimer = 0f;
+        }
+    }
+
+    private void PlayFootstepSound()
+    {
+        if (audioSource != null && footstepSound != null)
+        {
+            audioSource.PlayOneShot(footstepSound, footstepVolume);
+        }
+    }
+
+    private void PlayJumpSound()
+    {
+        if (audioSource != null && jumpSound != null)
+        {
+            audioSource.PlayOneShot(jumpSound, jumpVolume);
+        }
     }
 }
