@@ -14,33 +14,6 @@ public class PlayerHUD : MonoBehaviour
     public TextMeshProUGUI gunDamageText;
     public TextMeshProUGUI gunAutoText;
 
-    private float timeAlive = 0f;
-    private int kills = 0;
-    private int damage = 0;
-
-    public void Start()
-    {
-        UpdateText();
-    }
-
-    public void LateUpdate()
-    {
-        timeAlive += Time.deltaTime;
-        UpdateText();
-    }
-
-    public void AddKills()
-    {
-        kills += 1;
-        UpdateText();
-    }
-
-    public void AddDamage(int dam)
-    {
-        damage += dam;
-        UpdateText();
-    }
-
     private string FormatTime(float timeInSeconds)
     {
         // Format time as HH:MM:SS
@@ -51,7 +24,7 @@ public class PlayerHUD : MonoBehaviour
         return string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
     }
 
-    private void UpdateText()
+    public void UpdateText(float timeAlive, int kills, int damage)
     {
         timeAliveText.text = "Time: " + FormatTime(timeAlive);
         killsText.text = "Kills: " + kills;
