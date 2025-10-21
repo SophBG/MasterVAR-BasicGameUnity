@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
     public TextMeshProUGUI damageText;
 
     private bool paused = false;
+    private bool gameOver = false;
 
     private void Awake()
     {
@@ -47,7 +48,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (inputActions != null)
         {
-            inputActions.FindActionMap("Player").Enable();
+            inputActions.FindActionMap("UI").Enable();
             pauseAction = inputActions.FindAction("Pause");
             pauseAction.performed += OnPausePerformed;
         }
@@ -57,7 +58,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (inputActions != null)
         {
-            inputActions.FindActionMap("Player").Disable();
+            inputActions.FindActionMap("UI").Disable();
             Cleanup();
         }
     }
@@ -82,7 +83,8 @@ public class PauseMenu : MonoBehaviour
         // Pause the game
         Time.timeScale = 0f;
 
-        // Disable pause input when game over
+        // Disable input when game over
+        gameOver = true;
         if (inputActions != null)
         {
             inputActions.FindActionMap("Player").Disable();
@@ -112,6 +114,8 @@ public class PauseMenu : MonoBehaviour
 
     private void OnPausePerformed(InputAction.CallbackContext context)
     {
+        if (gameOver) return;
+        
         if (paused)
         {
             Resume();
@@ -129,6 +133,11 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         paused = true;
         OnGamePaused?.Invoke();
+
+        if (inputActions != null)
+        {
+            inputActions.FindActionMap("Player").Disable();
+        }
     }
 
     private void Resume()
@@ -138,6 +147,11 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         paused = false;
         OnGameResumed?.Invoke();
+
+        if (inputActions != null)
+        {
+            inputActions.FindActionMap("Player").Enable();
+        }
     }
 
     public void Restart()

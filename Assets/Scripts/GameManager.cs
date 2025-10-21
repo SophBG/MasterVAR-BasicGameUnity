@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEngine : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [Header("Events")]
     public UnityEvent<float, int, int> UpdateHUDStats;

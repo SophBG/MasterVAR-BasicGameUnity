@@ -103,6 +103,8 @@ public class PlayerShooting : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0f) return;
+        
         // Update cooldown timer
         if (timer > 0)
             timer -= Time.deltaTime;
