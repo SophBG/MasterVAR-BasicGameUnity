@@ -2,7 +2,7 @@
 
 # BasicGameUnity
 
-**BasicGameUnity** is a simple 3D game developed in Unity as part of my Master's program in *Virtual and Augmented Reality*.
+BasicGameUnity is a simple 3D game developed in Unity as part of my Master's program in *Virtual and Augmented Reality.
 
 ---
 
