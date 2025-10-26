@@ -2,7 +2,7 @@
 
 # BasicGameUnity
 
-BasicGameUnity is a simple 3D game developed in Unity as part of my Master's program in Virtual and Augmented Reality.
+BasicGameUnity is a simple 3D game developed in Unity as part of my Master’s program in Virtual and Augmented Reality. In this game, you play as a person lost in a city filled with hostile green enemies. Avoid them to survive, or defeat them to earn points. But be careful, as they will respawn. You have access to three different guns, each with unique stats, to help you stay alive.
 
 ---
 
